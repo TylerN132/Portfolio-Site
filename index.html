@@ -4,9 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tyler Nolan's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <style>
       body {
-        font-family: Arial, sans-serif;
+        font-family: 'Poppins', sans-serif;
         margin: 0;
         padding: 20px;
         background-color: #f4f4f4;
@@ -28,41 +31,25 @@
       section:hover {
         transform: scale(1.02);
       }
-      footer {
-        text-align: center;
-        margin-top: 20px;
-        color: #777;
-      }
-      .about-section {
-        text-align: center;
-        padding: 30px;
-      }
-      .about-section h2 {
-        color: #333;
-        font-size: 28px;
-        margin-bottom: 10px;
-      }
-      .profile-img {
-        border-radius: 50%;
-        border: 4px solid #007bff;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-        transition: transform 0.3s ease-in-out;
-      }
-      .profile-img:hover {
-        transform: scale(1.1);
-      }
-      .about-text {
-        font-size: 18px;
-        color: #555;
-        max-width: 600px;
-        margin: 20px auto;
-        line-height: 1.6;
-      }
-      .social-links a {
-        margin: 10px;
+      .button {
+        display: inline-block;
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
         text-decoration: none;
-        color: #007bff;
         font-weight: bold;
+        transition: background-color 0.3s;
+      }
+      .button:hover {
+        background-color: #0056b3;
+      }
+      .swiper {
+        width: 100%;
+        height: 300px;
+      }
+      .swiper-slide {
+        text-align: center;
       }
     </style>
   </head>
@@ -71,55 +58,50 @@
       <h1>Welcome to My Portfolio</h1>
     </header>
 
-    <section class="about-section">
+    <section>
       <h2>About Me</h2>
-      <img src="https://raw.githubusercontent.com/TylerN132/Portfolio-Site/Work/1730914680196.jpg" 
-           alt="Your Profile Picture" width="180" height="180" class="profile-img">
-      <p class="about-text">
-        Hello! I am a graduate of Keyin College’s Software Development program (Class of 2023).  
-        I have a passion for coding and love working on <strong>creative projects</strong> in my free time.  
-        This portfolio showcases some of my <strong>latest work</strong> and <strong>pet projects</strong>!
-      </p>
+      <img src="https://raw.githubusercontent.com/TylerN132/Portfolio-Site/Work/1730914680196.jpg" alt="Profile Picture" width="180" height="180">
+      <p>Hello! I am a graduate of Keyin College’s Software Development program (Class of 2023). I have a passion for coding and love working on creative projects!</p>
     </section>
     
     <section>
       <h2>Projects</h2>
-      <ul>
-        <li>
-          <strong>Project 1:</strong> 
-          <a href="https://github.com/TylerN132/The-Game" target="_blank">The Game</a> - 
-          A text-based video game I am currently developing. It is still in its early stages, 
-          but I plan to add CSS enhancements soon.
-        </li>
-      </ul>
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="project1-screenshot.jpg" alt="Project 1">
+            <p>The Game - A text-based RPG in development.</p>
+            <a href="https://github.com/TylerN132/The-Game" class="button">View Project</a>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
     </section>
     
     <section>
       <h2>Resume</h2>
-      <iframe src="https://docs.google.com/document/d/1esoMnXE4fdaemUspQjPu1keFlTDZPa3WxlzE99HISu0/edit?usp=sharing" 
-        width="100%" height="500px"></iframe>
-
-        <p>
-          <a href="https://raw.githubusercontent.com/TylerN132/Portfolio-Site/main/docs/Tyler_Nolan_Resume.pdf" 
-             download="Tyler_Nolan_Resume.pdf">
-            Download My Resume
-          </a>
-        </p>
-        
+      <iframe src="https://docs.google.com/document/d/1esoMnXE4fdaemUspQjPu1keFlTDZPa3WxlzE99HISu0/edit?usp=sharing" width="100%" height="500px"></iframe>
+      <p><a href="https://raw.githubusercontent.com/TylerN132/Portfolio-Site/main/docs/Tyler_Nolan_Resume.pdf" class="button" download>Download My Resume</a></p>
     </section>
 
     <section>
       <h2>Connect with Me</h2>
-      <div class="social-links">
-        <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
-        <a href="https://github.com/TylerN132" target="_blank">GitHub</a>
-      </div>
+      <a href="https://linkedin.com/in/yourprofile" class="button">LinkedIn</a>
+      <a href="https://github.com/TylerN132" class="button">GitHub</a>
     </section>
     
     <footer>
-      <p>
-        Contact me at: <a href="mailto:tyler_185@Outlook.com">tyler_185@Outlook.com</a>
-      </p>
+      <p>Contact me at: <a href="mailto:tyler_185@Outlook.com">tyler_185@Outlook.com</a></p>
     </footer>
+
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        pagination: { el: ".swiper-pagination", clickable: true },
+        navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }
+      });
+    </script>
   </body>
 </html>
