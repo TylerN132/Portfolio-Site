@@ -51,6 +51,24 @@
       .swiper-slide {
         text-align: center;
       }
+      .popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+      }
+      .popup img {
+        max-width: 90%;
+        max-height: 90%;
+      }
+      .popup.active {
+        display: flex;
+      }
     </style>
   </head>
   <body>
@@ -71,12 +89,8 @@
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <a href="https://github.com/TylerN132/The-Game" target="_blank">
-              <img src="https://raw.githubusercontent.com/TylerN132/Portfolio-Site/main/image_2025-04-01_134656619.png" alt="Project 1">
-            </a>
-            <a href="https://github.com/TylerN132/The-Game" target="_blank">
-              <img src="https://raw.githubusercontent.com/TylerN132/Portfolio-Site/635266c46669affcf7568d7f07c6fc55f623decc/image_2025-04-01_134656619.png" alt="Project Screenshot">
-            </a>
+            <img src="https://raw.githubusercontent.com/TylerN132/Portfolio-Site/main/image_2025-04-01_134656619.png" alt="Project 1" onclick="openPopup(this.src)">
+            <img src="https://raw.githubusercontent.com/TylerN132/Portfolio-Site/635266c46669affcf7568d7f07c6fc55f623decc/image_2025-04-01_134656619.png" alt="Project Screenshot" onclick="openPopup(this.src)">
             <p>The Game - A text-based RPG in development.</p>
             <a href="https://github.com/TylerN132/The-Game" class="button">View Project</a>
           </div>
@@ -103,12 +117,25 @@
       <p>Contact me at: <a href="mailto:tyler_185@Outlook.com">tyler_185@Outlook.com</a></p>
     </footer>
 
+    <div class="popup" id="imagePopup" onclick="closePopup()">
+      <img id="popupImage" src="" alt="Enlarged Image">
+    </div>
+
     <script>
       var swiper = new Swiper(".mySwiper", {
         spaceBetween: 30,
         pagination: { el: ".swiper-pagination", clickable: true },
         navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }
       });
+
+      function openPopup(src) {
+        document.getElementById('popupImage').src = src;
+        document.getElementById('imagePopup').classList.add('active');
+      }
+
+      function closePopup() {
+        document.getElementById('imagePopup').classList.remove('active');
+      }
     </script>
   </body>
 </html>
