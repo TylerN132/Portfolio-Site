@@ -69,6 +69,9 @@
       .popup.active {
         display: flex;
       }
+      .clickable-image {
+        cursor: pointer;
+      }
     </style>
   </head>
   <body>
@@ -83,14 +86,18 @@
       </div>
       <p>Hello! I am a graduate of Keyin College’s Software Development program (Class of 2023). I have a passion for coding and love working on creative projects!</p>
     </section>
-    
+
     <section>
       <h2>Projects</h2>
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <img src="https://raw.githubusercontent.com/TylerN132/Portfolio-Site/main/image_2025-04-01_134656619.png" alt="Project 1" onclick="openPopup(this.src)">
-            <img src="https://raw.githubusercontent.com/TylerN132/Portfolio-Site/635266c46669affcf7568d7f07c6fc55f623decc/image_2025-04-01_134656619.png" alt="Project Screenshot" onclick="openPopup(this.src)">
+            <a href="https://github.com/TylerN132/The-Game" target="_blank">
+              <img class="clickable-image" src="https://raw.githubusercontent.com/TylerN132/Portfolio-Site/main/image_2025-04-01_134656619.png" alt="Project 1" onclick="openPopup(this.src)">
+            </a>
+            <a href="https://github.com/TylerN132/The-Game" target="_blank">
+              <img class="clickable-image" src="https://raw.githubusercontent.com/TylerN132/Portfolio-Site/635266c46669affcf7568d7f07c6fc55f623decc/image_2025-04-01_134656619.png" alt="Project Screenshot" onclick="openPopup(this.src)">
+            </a>
             <p>The Game - A text-based RPG in development.</p>
             <a href="https://github.com/TylerN132/The-Game" class="button">View Project</a>
           </div>
@@ -100,7 +107,7 @@
         <div class="swiper-button-prev"></div>
       </div>
     </section>
-    
+
     <section>
       <h2>Resume</h2>
       <iframe src="https://docs.google.com/document/d/1esoMnXE4fdaemUspQjPu1keFlTDZPa3WxlzE99HISu0/edit?usp=sharing" width="100%" height="500px"></iframe>
@@ -112,7 +119,7 @@
       <a href="https://linkedin.com/in/yourprofile" class="button">LinkedIn</a>
       <a href="https://github.com/TylerN132" class="button">GitHub</a>
     </section>
-    
+
     <footer>
       <p>Contact me at: <a href="mailto:tyler_185@Outlook.com">tyler_185@Outlook.com</a></p>
     </footer>
